@@ -1,0 +1,102 @@
+.btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background: var(--color-gray-100);
+    color: var(--color-gray-700);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: var(--color-gray-200);
+}
+
+.btn-cancel {
+    background: var(--color-danger);
+    color: white;
+}
+
+.btn-cancel:hover:not(:disabled) {
+    background: var(--color-danger-dark);
+}
+
+.btn-attend {
+    background: var(--color-success);
+    color: white;
+}
+
+.btn-attend:hover:not(:disabled) {
+    background: var(--color-success-dark);
+}
+
+.btn-reschedule {
+    background: var(--color-info);
+    color: white;
+}
+
+.btn-reschedule:hover:not(:disabled) {
+    background: #2563eb;
+}
+
+.actions,
+.appointment-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+    }
+
+    .actions,
+    .appointment-actions {
+        width: 100%;
+    }
+
+    .actions .btn,
+    .appointment-actions .btn {
+        flex: 1;
+        min-width: 0;
+    }
+}
