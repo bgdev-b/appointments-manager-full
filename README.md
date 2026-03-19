@@ -160,10 +160,12 @@ The repository includes [render.yaml](./render.yaml) to create the backend servi
 Important production settings:
 
 - `PORT`: provided automatically by Render
-- `DB_PATH`: set to `/var/data/database.sqlite`
+- `DB_PATH`: set to `./data/database.sqlite` for Render free tier
 - `FRONTEND_ORIGIN`: set this to your Vercel frontend URL
 
-The Render service uses a persistent disk mounted at `/var/data` so the SQLite database survives deploys and restarts.
+In Render free tier, SQLite data is ephemeral and can be lost on restarts/redeploys.
+
+If you later upgrade to a paid plan with persistent disk, use `DB_PATH=/var/data/database.sqlite` and mount a disk in `/var/data`.
 
 Health check endpoint:
 
