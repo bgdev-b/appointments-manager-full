@@ -127,6 +127,29 @@ cd appointments-manager-backend
 npm install
 ```
 
+## Environment Variables
+
+Copy [.env.example](./.env.example) and configure as needed.
+
+- `PORT`: server port for local development or custom hosts
+- `FRONTEND_ORIGIN`: comma-separated list of allowed frontend origins for CORS
+- `DB_PATH`: SQLite database path. In Render this should point to a persistent disk, for example `/var/data/database.sqlite`
+
+## Deploy on Render
+
+This project is ready to deploy on Render as a Node web service.
+
+Recommended settings:
+
+- Root directory: `appointments-manager-backend`
+- Build command: `npm install`
+- Start command: `npm start`
+- Health check path: `/health`
+
+If you deploy from the repository root, you can use [../render.yaml](../render.yaml).
+
+Important: because this backend uses SQLite, Render must mount a persistent disk and `DB_PATH` must point to that mounted directory. The included blueprint uses `/var/data/database.sqlite`.
+
 
 ## Notes
 

@@ -165,6 +165,29 @@ npm run preview
 - npm
 - Backend API running on port 3000
 
+## Environment Variables
+
+Copy [.env.example](./.env.example) and set:
+
+- `VITE_API_URL`: backend base URL used by the frontend
+
+Examples:
+
+- Local: `VITE_API_URL=http://localhost:3000`
+- Production: `VITE_API_URL=https://your-render-backend.onrender.com`
+
+## Deploy on Vercel
+
+This frontend is ready to deploy on Vercel.
+
+Recommended settings:
+
+- Root directory: `appointments-manager-frontend`
+- Build command: `npm run build`
+- Output directory: `dist`
+
+SPA routing support is configured in [vercel.json](./vercel.json), so routes like `/appointments/1` resolve correctly after refresh.
+
 ---
 
 ## Notes

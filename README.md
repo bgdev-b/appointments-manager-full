@@ -146,6 +146,46 @@ npm run dev
 http://localhost:5173
 ```
 
+## Deployment
+
+This project is ready to deploy with:
+
+- Vercel for the frontend
+- Render for the backend
+
+### Backend on Render
+
+The repository includes [render.yaml](./render.yaml) to create the backend service as a Render Blueprint.
+
+Important production settings:
+
+- `PORT`: provided automatically by Render
+- `DB_PATH`: set to `/var/data/database.sqlite`
+- `FRONTEND_ORIGIN`: set this to your Vercel frontend URL
+
+The Render service uses a persistent disk mounted at `/var/data` so the SQLite database survives deploys and restarts.
+
+Health check endpoint:
+
+- `GET /health`
+
+### Frontend on Vercel
+
+The frontend now reads the API base URL from `VITE_API_URL`.
+
+Set this environment variable in Vercel:
+
+- `VITE_API_URL=https://your-render-backend.onrender.com`
+
+The repository includes [appointments-manager-frontend/vercel.json](./appointments-manager-frontend/vercel.json) to support SPA routing with Vue Router.
+
+### Recommended deploy order
+
+1. Deploy the backend to Render.
+2. Copy the Render public URL.
+3. Deploy the frontend to Vercel with `VITE_API_URL` pointing to that backend URL.
+4. Update `FRONTEND_ORIGIN` in Render with the final Vercel domain.
+
 ## Key Technical Decisions
 
 - Appointment states are modeled as constants instead of booleans to support multiple final and transitional states.
