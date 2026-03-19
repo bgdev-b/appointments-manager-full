@@ -9,14 +9,32 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const defaultDbPath = path.resolve(__dirname, 'database.sqlite');
 const configuredDbPath = process.env.DB_PATH;
-const dbPath = isTest
+const requestedDbPath = isTest
     ? ':memory:'
     : configuredDbPath
         ? path.resolve(process.cwd(), configuredDbPath)
         : defaultDbPath;
 
-if (dbPath !== ':memory:') {
-    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+const fallbackDbPath = path.resolve(process.cwd(), 'data', 'database.sqlite');
+
+const ensureDirectoryForDb = (targetPath) => {
+    if (targetPath !== ':memory:') {
+        fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+    }
+};
+
+let dbPath = requestedDbPath;
+
+try {
+    ensureDirectoryForDb(dbPath);
+} catch (error) {
+    if (dbPath !== ':memory:') {
+        console.warn(`Unable to use DB_PATH ${dbPath}. Falling back to ${fallbackDbPath}.`, error.message);
+        dbPath = fallbackDbPath;
+        ensureDirectoryForDb(dbPath);
+    } else {
+        throw error;
+    }
 }
 
 const db = new sqlite3.Database(dbPath, (err) => {
