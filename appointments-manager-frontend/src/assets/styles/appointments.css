@@ -13,15 +13,15 @@
     border: 1px solid var(--color-border);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, #071207 0%, #0a1a0a 100%);
+    background: #0e1610;
     transition: all var(--transition-base);
     box-shadow: var(--shadow-sm);
 }
 
 .appointment-card:hover {
-    box-shadow: var(--shadow-md), 0 0 15px rgba(0, 230, 118, 0.15);
+    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
-    border-color: rgba(0, 230, 118, 0.4);
+    border-color: var(--color-primary);
 }
 
 .appointment-header {
@@ -35,10 +35,10 @@
 .service-name {
     margin: 0;
     font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--color-primary);
+    font-weight: 600;
+    color: var(--color-gray-900);
     font-family: var(--font-heading);
-    letter-spacing: 0.04em;
+    font-style: italic;
 }
 
 .status {
@@ -53,24 +53,21 @@
 }
 
 .status.pending {
-    background: rgba(255, 234, 0, 0.1);
-    color: #ffea00;
-    border: 1px solid rgba(255, 234, 0, 0.3);
-    text-shadow: 0 0 8px rgba(255, 234, 0, 0.4);
+    background: rgba(181, 129, 10, 0.12);
+    color: #c9960f;
+    border: 1px solid rgba(181, 129, 10, 0.35);
 }
 
 .status.attended {
-    background: rgba(0, 230, 118, 0.1);
-    color: #00e676;
-    border: 1px solid rgba(0, 230, 118, 0.3);
-    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+    background: rgba(74, 140, 92, 0.12);
+    color: var(--color-primary-light);
+    border: 1px solid rgba(74, 140, 92, 0.35);
 }
 
 .status.canceled {
-    background: rgba(255, 23, 68, 0.1);
-    color: #ff5252;
-    border: 1px solid rgba(255, 23, 68, 0.3);
-    text-shadow: 0 0 8px rgba(255, 23, 68, 0.3);
+    background: rgba(168, 50, 50, 0.12);
+    color: #c96060;
+    border: 1px solid rgba(168, 50, 50, 0.35);
 }
 
 .appointment-datetime {

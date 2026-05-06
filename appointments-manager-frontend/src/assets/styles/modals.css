@@ -1,8 +1,8 @@
 .modal {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 5, 0, 0.75);
-    backdrop-filter: blur(6px);
+    background-color: rgba(5, 10, 5, 0.75);
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,8 +11,9 @@
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #071207 0%, #0d200d 100%);
+    background: #0e1610;
     border: 1px solid var(--color-border);
+    border-top: 2px solid var(--color-primary);
     padding: var(--spacing-xl);
     border-radius: var(--radius-xl);
     width: 100%;
@@ -20,19 +21,17 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
-    box-shadow: var(--shadow-xl), var(--shadow-glow);
+    box-shadow: var(--shadow-xl);
 }
 
 .modal-content h3 {
     margin: 0;
     text-align: center;
-    color: var(--color-primary);
+    color: var(--color-gray-900);
     font-size: 1.5rem;
     font-weight: 700;
     font-family: var(--font-heading);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
+    font-style: italic;
 }
 
 .modal-content .service-label {
@@ -71,34 +70,34 @@
     flex-direction: column;
     gap: var(--spacing-sm);
     flex: 1;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--color-text-muted);
-    font-family: var(--font-heading);
-    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
 .datetime-group input[type="time"],
 .datetime-group input[type="date"] {
     padding: 0.625rem 0.75rem;
-    border: 1.5px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     font-size: 0.875rem;
     font-family: var(--font-sans);
     transition: all var(--transition-fast);
-    background: #030d03;
+    background: #0a1209;
     color: var(--color-text);
 }
 
 .datetime-group input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.15), 0 0 10px rgba(0, 230, 118, 0.2);
+    box-shadow: 0 0 0 3px rgba(74, 140, 92, 0.15);
 }
 
 .datetime-group input:hover:not(:focus) {
-    border-color: rgba(0, 230, 118, 0.4);
+    border-color: var(--color-primary);
 }
 
 .modal-action {

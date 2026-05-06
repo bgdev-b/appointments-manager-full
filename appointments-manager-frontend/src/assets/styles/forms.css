@@ -1,5 +1,5 @@
 .appointment-form {
-    background: linear-gradient(135deg, #071207 0%, #0d200d 100%);
+    background: #0e1610;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
@@ -14,21 +14,21 @@
     margin: 0 0 var(--spacing-md);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-gray-900);
     font-family: var(--font-heading);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
+    font-style: italic;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-sm);
 }
 
 label {
     display: flex;
     flex-direction: column;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--color-text-muted);
-    font-family: var(--font-heading);
-    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     gap: var(--spacing-xs);
 }
@@ -43,13 +43,12 @@ select,
 textarea {
     padding: 0.625rem 0.75rem;
     border-radius: var(--radius-md);
-    border: 1.5px solid var(--color-border);
+    border: 1px solid var(--color-border);
     font-size: 0.9rem;
     font-family: var(--font-sans);
     transition: all var(--transition-fast);
-    background: #030d03;
+    background: #0a1209;
     color: var(--color-text);
-    letter-spacing: 0.02em;
 }
 
 .appointment-form input:focus,
@@ -59,22 +58,22 @@ select:focus,
 textarea:focus {
     border-color: var(--color-primary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.15), 0 0 10px rgba(0, 230, 118, 0.2);
+    box-shadow: 0 0 0 3px rgba(74, 140, 92, 0.15);
 }
 
 .appointment-form input:hover:not(:focus),
 .appointment-form select:hover:not(:focus),
 input:hover:not(:focus),
 select:hover:not(:focus) {
-    border-color: rgba(0, 230, 118, 0.4);
+    border-color: var(--color-primary);
 }
 
 .select {
     padding: 0.625rem 0.75rem;
     border-radius: var(--radius-md);
-    border: 1.5px solid var(--color-border);
+    border: 1px solid var(--color-border);
     font-size: 0.875rem;
-    background: #030d03;
+    background: #0a1209;
     color: var(--color-text);
     cursor: pointer;
 }
@@ -94,12 +93,12 @@ select:hover:not(:focus) {
 }
 
 .appointment-fieldset legend {
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: var(--spacing-sm);
     color: var(--color-text-muted);
-    font-size: 0.875rem;
-    font-family: var(--font-heading);
-    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    font-family: var(--font-sans);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
