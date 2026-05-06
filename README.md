@@ -126,6 +126,15 @@ appointment-manager/
 └── README.md
 ```
 
+## Screenshots
+
+<!-- Agregar screenshots en docs/screenshots/ y referenciarlos así:
+![Appointments View](docs/screenshots/appointments-view.png)
+![Appointment Detail](docs/screenshots/appointment-detail.png)
+![Clients View](docs/screenshots/clients-view.png)
+![Services View](docs/screenshots/services-view.png)
+-->
+
 ## Running the Project
 
 ### Backend
