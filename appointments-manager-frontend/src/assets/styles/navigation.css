@@ -2,10 +2,13 @@
     display: inline-flex;
     align-items: center;
     padding: 0.625rem 1rem;
-    color: var(--color-gray-700);
+    color: var(--color-text-muted);
     text-decoration: none;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
     position: relative;
@@ -13,7 +16,8 @@
 
 .nav-link:hover {
     color: var(--color-primary);
-    background: var(--color-gray-50);
+    background: rgba(0, 230, 118, 0.08);
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
 }
 
 .nav-link::after {
@@ -27,16 +31,18 @@
     background: var(--color-primary);
     border-radius: 2px;
     transition: transform var(--transition-base);
+    box-shadow: 0 0 8px rgba(0, 230, 118, 0.6);
 }
 
 .router-link-active {
     color: var(--color-primary);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .router-link-exact-active {
     color: var(--color-primary);
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(129, 140, 248, 0.08));
+    background: rgba(0, 230, 118, 0.1);
+    text-shadow: 0 0 12px rgba(0, 230, 118, 0.5);
 }
 
 .router-link-exact-active::after {
