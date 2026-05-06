@@ -126,6 +126,24 @@ appointment-manager/
 └── README.md
 ```
 
+## Demo
+
+<!-- OPCIÓN A — Video subido a GitHub (recomendado):
+     Andá a github.com → abrí el README → Edit → arrastrá el .mp4 al cuadro de texto
+     GitHub lo hostea y genera un link automáticamente. Pegalo así:
+
+https://github.com/user-attachments/assets/TU-ID-AQUI
+
+-->
+
+<!-- OPCIÓN B — GIF (grabá con ScreenToGif o Gifox, guardalo en docs/videos/):
+![Demo](docs/videos/demo.gif)
+-->
+
+<!-- OPCIÓN C — YouTube o Loom (reemplazá la URL):
+[![Ver demo](https://img.youtube.com/vi/TU_VIDEO_ID/maxresdefault.jpg)](https://youtu.be/TU_VIDEO_ID)
+-->
+
 ## Screenshots
 
 <!-- Agregar screenshots en docs/screenshots/ y referenciarlos así:
